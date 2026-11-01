@@ -1,0 +1,67 @@
+@StoreApi_HostAddress = http://localhost:5132
+
+# GET {{StoreApi_HostAddress}}/weatherforecast/
+# Accept: application/json
+
+POST http://localhost:5132/api/customers
+Content-Type: application/json
+
+{
+  "name": "Ольга",
+  "email": "olga@example.com"
+}
+
+###
+
+GET http://localhost:5132/api/customers
+
+###
+
+GET http://localhost:5132/api/customers/1
+
+###
+
+GET http://localhost:5132/api/customers/999
+
+###
+
+POST http://localhost:5132/api/customers/1/orders
+
+###
+
+GET http://localhost:5132/api/customers/1/orders
+
+###
+
+GET http://localhost:5132/api/orders/2
+
+###
+
+GET http://localhost:5132/api/customers/999/orders
+
+###
+
+PATCH http://localhost:5132/api/orders/2/status
+Content-Type: application/json
+
+{
+  "status": "completed"
+}
+
+###
+
+PATCH http://localhost:5132/api/orders/2/status
+Content-Type: application/json
+
+{
+  "status": "something"
+}
+
+###
+
+PATCH http://localhost:5132/api/orders/999/status
+Content-Type: application/json
+
+{
+  "status": "completed"
+}
